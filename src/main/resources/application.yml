@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/static,classpath:/resources/,file:${web.upload-path}
+  mvc:
+    static-path-pattern: /files/**
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ketangpai?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=UTC
+    username: root
+    password: root
+mybatis:
+  type-aliases-package: com/test/entity
+  mapper-locations: classpath:com/text/mapper/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+app:
+  uploadFolder: D://uploadFiles/
+  musicFolder: D://uploadFiles/music/
+  coverFolder: D://uploadFiles/cover/
+  lyricFolder: D://uploadFiles/lyric/
+  previewPath: http://127.0.0.1:8080/files/
+  musicPath: http://127.0.0.1:8080/files/music/
+  coverPath: http://127.0.0.1:8080/files/cover/
+  lyricPath: http://127.0.0.1:8080/files/lyric/
+web:
+  upload-path: D://uploadFiles/
+#logging:
+#  config:classpath:logback.xml
